@@ -1,0 +1,13 @@
+{
+    "name": "gemini-proxy-for-hk",
+    "version": "1.0.0",
+    "description": "A dedicated proxy for Gemini API to serve HK users.",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "express": "^4.19.2",
+        "http-proxy-middleware": "^3.0.0"
+    }
+}
