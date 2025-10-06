@@ -33,6 +33,7 @@ const apiProxy = createProxyMiddleware({
     changeOrigin: true,
     ws: false,
     onProxyReq: (proxyReq, req, res) => {
+        proxyReq.path = req.originalUrl;
         proxyReq.removeHeader('x-forwarded-for');
         proxyReq.removeHeader('x-real-ip');
     },
@@ -48,3 +49,4 @@ app.use('/*', verifyRequest, apiProxy);
 app.listen(PORT, () => {
     console.log(`Secure proxy server is running on port ${PORT}`);
 });
+
